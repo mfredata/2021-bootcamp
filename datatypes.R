@@ -185,3 +185,79 @@ dates_seq <- seq(as_date("2021/08/01"), length = 5, by = "days")
 dates_seq
 
 # Matrices
+k <- matrix(nrow = 3, ncol = 2)
+k
+class(k)
+dim(k)
+
+# create a 2x3 matrix with values from 1 to 6
+I <- matrix(1:6, nrow = 2, ncol = 3)
+I
+
+# create matrix using existing vectors
+countries <- c("Canada", "Kenya", "United states")
+emissions <- c(53700, 14300, 5250000)
+m <- matrix(c(countries, emissions), nrow = 3)
+m
+
+# using cbind() to create a matrix
+matrix <- cbind(countries, emissions)
+matrix
+
+# use colnames() and rownames() to rename columns and rows, respectively
+colnames(matrix)[2] <- "emissions_new"
+rownames(matrix) <- c("c1", "c2", "c3")
+matrix
+
+# subset matrices
+# extract the first element of the second column
+matrix[1,2]
+# extract first row
+matrix[1,]
+# extract first column
+matrix[,1]
+matrix["c2",]
+
+# Lists
+first_list <- list(a = 1:5, b = 6:10, c = c("food", "resource", "economics")) 
+first_list
+
+# output is a list
+first_list["a"]
+
+# output is integer
+first_list[['a']]
+
+# output is character
+first_list$c
+
+# Data frames (df for short)
+first_df <- data.frame(countries = c("Canada", "Kenya", "United States"), emissions = c(53700, 14300, 5250000))
+first_df
+class(first_df)
+
+# convert matrix we created earlier to df
+matrix_df <- as.data.frame(matrix)
+matrix_df
+class(matrix_df)
+
+# common functions to inspect dfs
+
+# dimension
+dim(first_df)
+# structure
+str(first_df)
+# first 5 rows
+head(first_df)
+# column names
+names(first_df)
+
+# use brackets or $ to extract elements of a df
+first_df["countries"]
+class(first_df["countries"])
+
+first_df[["countries"]]
+class(first_df[["countries"]])
+
+first_df$countries
+class(first_df$countries)
